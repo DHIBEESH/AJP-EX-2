@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form th:action="@{/user_save}" th:method="post" th:object="${user}">
+      <div>Name</div>
+
+      <input type="hidden" th:field="*{id}" />
+      <input type="text" th:field="*{name}" />
+
+      <div>Age</div>
+      <input type="number" th:field="*{age}" />
+      
+      <div>Game Name</div>
+      <input type="text" th:field="*{gname}" />
+
+      <input type="submit" value="Add User" />
+    </form>
+  </body>
+</html>

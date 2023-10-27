@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:thymeleaf.org">
+  <head>
+       <title>Home</title>
+  </head>
+ <body>
+    <div>
+      <a th:href="@{/add_user}">Add New User</a>
+    </div>
+     <div>
+      <section th:each="user:${users}">
+        <h1>[[${user.name}]]</h1>
+        <h1>[[${user.age}]]</h1>
+        <h1>[[${user.gname}]]</h1>
+        <a th:href="@{'delete/user'+ ${user.id}}">Delete User</a>
+        <a th:href="@{'update/user'+ ${user.id}}">Update User</a>
+      </section>
+    </div>
+  </body> 
+</html>
